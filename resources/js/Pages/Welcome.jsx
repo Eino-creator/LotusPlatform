@@ -1,4 +1,4 @@
-import './Welcome.css';
+import '/resources/css/Welcome.css';
 import { Head, Link } from '@inertiajs/react';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
@@ -30,6 +30,10 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                 </Link>
                             </div>
                             <nav className="nav">
+                                <Link
+                                    className="nav-link dark">
+                                        Ons Team
+                                </Link>
                                 {auth.user ? (
                                     <Link
                                         href={route('dashboard')}
@@ -45,14 +49,15 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                         >
                                             Inloggen
                                         </Link>
-                                        <Link
+                                        {/* <Link
                                             href={route('register')}
                                             className="nav-link dark"
                                         >
                                             Registreren
-                                        </Link>
+                                        </Link> */}
                                     </>
                                 )}
+
                             </nav>
                         </header>
 
