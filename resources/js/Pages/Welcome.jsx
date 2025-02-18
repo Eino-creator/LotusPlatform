@@ -21,10 +21,10 @@ export default function Welcome() {
                 <div>
                     <div>
                         <main>
-                            <div className="mt-6"></div>
+                            <div className="mt-6">
+                                dit is de welkom pagina voor lotuskring Zuid-Oost Drenthe
+                            </div>
                         </main>
-
-
                     </div>
                 </div>
             </div>
