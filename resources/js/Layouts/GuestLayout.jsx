@@ -1,16 +1,49 @@
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import { Link } from '@inertiajs/react';
 
-export default function GuestLayout({ children }) {
+export default function GuestLayout({ auth = {}, children }) {
     return (
-        <div className="flex min-h-screen flex-col items-center bg-gray-100 pt-6 sm:justify-center sm:pt-0">
+        <div>
+            <header className="header">
+                <div>
+                    <Link href={route('dashboard')}>
+                        <img
+                            src="/img/lotus-logo-text.png"
+                            alt="LotusKring Zuid-Oost Drenthe"
+                            className="logo"
+                        />
+                    </Link>
+                </div>
+                <nav className="nav">
+                    <Link className="nav-link dark">
+                        Ons Team
+                    </Link>
+                    {auth.user ? (
+                        <Link
+                            href={route('dashboard')}
+                            className="nav-link dark"
+                        >
+                            Dashboard
+                        </Link>
+                    ) : (
+                        <div>
+                            <Link
+                                href={route('login')}
+                                className="nav-link dark"
+                            >
+                                Inloggen
+                            </Link>
+                            {/* <Link
+                                href={route('register')}
+                                className="nav-link"
+                            >
+                                Registreren
+                            </Link> */}
+                        </div>
+                    )}
+                </nav>
+            </header>
             <div>
-                <Link href="/">
-                    <ApplicationLogo className="h-20 w-20 fill-current text-gray-500" />
-                </Link>
-            </div>
-
-            <div className="mt-6 w-full overflow-hidden bg-white px-6 py-4 shadow-md sm:max-w-md sm:rounded-lg">
                 {children}
             </div>
         </div>

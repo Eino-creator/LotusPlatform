@@ -1,66 +1,25 @@
 import '/resources/css/Welcome.css';
+import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link } from '@inertiajs/react';
 
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
-    const handleImageError = () => {
-        document
-            .getElementById('screenshot-container')
-            ?.classList.add('!hidden');
-        document.getElementById('docs-card')?.classList.add('!row-span-1');
-        document
-            .getElementById('docs-card-content')
-            ?.classList.add('!flex-row');
-        document.getElementById('background')?.classList.add('!hidden');
-    };
+export default function Welcome() {
+    // const handleImageError = () => {
+    //     document
+    //         .getElementById('screenshot-container')
+    //         ?.classList.add('!hidden');
+    //     document.getElementById('docs-card')?.classList.add('!row-span-1');
+    //     document
+    //         .getElementById('docs-card-content')
+    //         ?.classList.add('!flex-row');
+    //     document.getElementById('background')?.classList.add('!hidden');
+    // };
 
     return (
-        <>
+        <GuestLayout>
             <Head title="LotusKring Zuid-Oost Drenthe" />
             <div className="welcome-container">
                 <div>
                     <div>
-                        <header className="header">
-                            <div>
-                                <Link href={route('dashboard')}>
-                                    <img
-                                        src="/img/lotus-logo-text.png"
-                                        alt="LotusKring Zuid-Oost Drenthe"
-                                        className="logo"
-                                    />
-                                </Link>
-                            </div>
-                            <nav className="nav">
-                                <Link
-                                    className="nav-link dark">
-                                        Ons Team
-                                </Link>
-                                {auth.user ? (
-                                    <Link
-                                        href={route('dashboard')}
-                                        className="nav-link dark"
-                                    >
-                                        Dashboard
-                                    </Link>
-                                ) : (
-                                    <>
-                                        <Link
-                                            href={route('login')}
-                                            className="nav-link dark"
-                                        >
-                                            Inloggen
-                                        </Link>
-                                        {/* <Link
-                                            href={route('register')}
-                                            className="nav-link dark"
-                                        >
-                                            Registreren
-                                        </Link> */}
-                                    </>
-                                )}
-
-                            </nav>
-                        </header>
-
                         <main>
                             <div className="mt-6"></div>
                         </main>
@@ -73,6 +32,6 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     </div>
                 </div>
             </div>
-        </>
+        </GuestLayout>
     );
 }
