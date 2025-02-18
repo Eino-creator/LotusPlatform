@@ -24,11 +24,7 @@ export default function Welcome() {
                             <div className="mt-6"></div>
                         </main>
 
-                        <footer>
-                            <div className="footer dark">
-                                LotusKring Zuid-Oost Drenthe
-                            </div>
-                        </footer>
+
                     </div>
                 </div>
             </div>

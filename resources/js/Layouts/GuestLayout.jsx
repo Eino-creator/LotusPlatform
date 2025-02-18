@@ -46,6 +46,11 @@ export default function GuestLayout({ auth = {}, children }) {
             <div>
                 {children}
             </div>
+            <footer>
+                <div className="footer dark">
+                    LotusKring Zuid-Oost Drenthe
+                </div>
+            </footer>
         </div>
     );
 }
