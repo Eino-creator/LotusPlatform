@@ -1,5 +1,9 @@
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import { Link } from '@inertiajs/react';
+import {
+    UserCircleIcon,
+} from '@heroicons/react/24/outline';
+import React from 'react';
 
 export default function GuestLayout({ auth = {}, children }) {
     return (
@@ -15,9 +19,24 @@ export default function GuestLayout({ auth = {}, children }) {
                     </Link>
                 </div>
                 <nav className="nav">
-                    <Link className="nav-link dark">
-                        Ons Team
+                    <div className='nav-links'>
+                <Link className="nav-link dark">
+                        LotusKring
                     </Link>
+                <Link className="nav-link dark">
+                        Aanvraag
+                    </Link>
+                <Link className="nav-link dark">
+                        Foto album
+                    </Link>
+                <Link className="nav-link dark">
+                        Opleidingen
+                    </Link>
+                    <Link className="nav-link dark">
+                        Contact
+                    </Link>
+                    </div>
+                    <div>
                     {auth.user ? (
                         <Link
                             href={route('dashboard')}
@@ -31,7 +50,8 @@ export default function GuestLayout({ auth = {}, children }) {
                                 href={route('login')}
                                 className="nav-link dark"
                             >
-                                Inloggen
+                                <UserCircleIcon className="icon" />
+                                login
                             </Link>
                             {/* <Link
                                 href={route('register')}
@@ -41,6 +61,7 @@ export default function GuestLayout({ auth = {}, children }) {
                             </Link> */}
                         </div>
                     )}
+                    </div>
                 </nav>
             </header>
             <div>
