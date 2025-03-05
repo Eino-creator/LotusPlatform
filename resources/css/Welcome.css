@@ -95,3 +95,28 @@
 }
 
 /* Add other rules as needed */
+.welcome-text {
+    max-width: 40%;
+    background-color:cornsilk;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.welcome-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.welcome-map {
+    display: flex;
+    max-width: 40%;
+    background-color:cornsilk;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
