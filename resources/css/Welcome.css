@@ -1,5 +1,5 @@
 .welcome-container {
-  background-color: #f9fafb;
+  background-color: white;
   color: rgba(0, 0, 0, 0.5);
   position: relative;
   min-height: 100vh;
@@ -21,7 +21,7 @@
   justify-content: space-between;
   padding-top: 5px;
   width: 100%;
-  background-color: lightgrey;
+  background-color: white;
 }
 
 .nav {
@@ -109,6 +109,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    background-color: white;
 }
 
 .welcome-map {
