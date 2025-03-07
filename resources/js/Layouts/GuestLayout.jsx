@@ -22,7 +22,7 @@ export default function GuestLayout({ auth = {}, children }) {
                     <div className='nav-links'>
                 <Link className="nav-link dark">
                         LotusKring
-                    </Link>
+                </Link>
                 <Link className="nav-link dark">
                         Aanvraag
                     </Link>
