@@ -29,13 +29,10 @@ export default function Welcome() {
                                 <div className='welcome-text-content'>
                                     <h1>Welkom bij LotusKring Zuid-Oost Drenthe</h1>
                                     <p>
-                                        iorum ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus
-                                        euismod, ultricies mi at, tincidunt neque. Sed nec lacus eget odio
-                                        fermentum tincidunt. Nulla facilisi. Aenean nec enim nec nunc
-                                        condimentum ultricies. Sed nec lacus eget odio fermentum tincidunt.
-                                        Nulla facilisi. Aenean nec enim nec nunc condimentum ultricies.
-                                        Sed nec lacus eget odio fermentum tincidunt. Nulla facilisi.
-                                        Aenean nec enim nec nunc condimentum ultricies.
+                                    Onze Lotus Kring is gevestigd in Emmen, we zijn een groep van enthousiaste vrijwilligers die
+                                    zijn opgeleid en gediplomeerd om als realistische slachtoffers te spelen bij BHV trainingen, EHBO trainingen
+                                    en bij Hulpdiensten zoals Brandweer, Politie en Ambulance.
+                                    We spelen in noord Nederland Groningen, Friesland, Drenthe en Overijssel.
                                     </p>
                                 </div>
                             </div>
