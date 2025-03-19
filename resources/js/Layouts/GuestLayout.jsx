@@ -6,22 +6,11 @@ import {
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import CarouselComponent from '@/Components/CarouselComponent';
 
 const facebookIcon = <FontAwesomeIcon icon={faFacebook} className='social-media-logo' />
-// const element3 = <FontAwesomeIcon icon={faInstagram} />
-// const element4 = <FontAwesomeIcon icon={faTwitter} />
-// const element5 = <FontAwesomeIcon icon={faLinkedin} />
 const youtubeIcon = <FontAwesomeIcon icon={faYoutube} className='social-media-logo' />
-// const element7 = <FontAwesomeIcon icon={faWhatsapp} />
-// const element8 = <FontAwesomeIcon icon={faSnapchat} />
-// const element9 = <FontAwesomeIcon icon={faTiktok} />
-// const element10 = <FontAwesomeIcon icon={faPinterest} />
-// const element11 = <FontAwesomeIcon icon={faTwitch} />
-// const element12 = <FontAwesomeIcon icon={faDiscord} />
-// const element13 = <FontAwesomeIcon icon={faTelegram} />
-// const element14 = <FontAwesomeIcon icon={faSignal} />
-// const element15 = <FontAwesomeIcon icon={faSlack} />
-// const element16 = <FontAwesomeIcon icon={faMessenger} />
+
 
 export default function GuestLayout({ auth = {}, children }) {
     return (
@@ -55,11 +44,14 @@ export default function GuestLayout({ auth = {}, children }) {
                                 </Link>
                             </div>
                         </div>
-                        <Link className="nav-link dark">
-                            Aanvraag
+                        <Link href={route('about-us')} className="nav-link dark">
+                            Over Ons
                         </Link>
                         <Link className="nav-link dark">
                             Foto album
+                        </Link>
+                        <Link className="nav-link dark">
+                            Aanvraag
                         </Link>
 
                         <Link className="nav-link dark">
@@ -94,6 +86,7 @@ export default function GuestLayout({ auth = {}, children }) {
                     </div>
                 </nav>
             </header>
+            <CarouselComponent />
             <div>
                 {children}
             </div>

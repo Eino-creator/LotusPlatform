@@ -2,7 +2,6 @@
   background-color: white;
   color: rgba(0, 0, 0, 0.5);
   position: relative;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,12 +15,16 @@
   max-width: 877px;
 }
 
+
 .header {
   display: flex;
   justify-content: space-between;
   padding-top: 5px;
   width: 100%;
   background-color: white;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
 }
 
 .nav {
@@ -207,3 +210,7 @@
     display: flex;
     justify-content: space-between;
 } */
+
+.image-carousel {
+    margin-top: 70px; /* Adjust this value as needed to ensure the carousel is not covered by the header */
+}
