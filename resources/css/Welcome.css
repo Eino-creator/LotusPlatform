@@ -215,6 +215,16 @@
 
 .image-carousel {
     margin-top: 70px; /* Adjust this value as needed to ensure the carousel is not covered by the header */
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about-us {
