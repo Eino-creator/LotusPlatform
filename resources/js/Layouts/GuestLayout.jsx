@@ -16,6 +16,8 @@ export default function GuestLayout({ auth = {}, children }) {
     return (
         <div>
             <header className="header">
+                <div className='top-bar'></div>
+                <div className='header-content'>
                 <div>
                     <Link href={route('welcome')}>
                         <img
@@ -27,23 +29,9 @@ export default function GuestLayout({ auth = {}, children }) {
                 </div>
                 <nav className="nav">
                     <div className='nav-links'>
-                        <div className="dropdown">
-                            <button className="dropbtn">Vereniging</button>
-                            <div className="dropdown-content">
-                                <Link className='drpdwn-item'>
-                                    Geschiedenis
-                                </Link>
-                                <Link className='drpdwn-item'>
-                                    Lesdata
-                                </Link>
-                                <Link className='drpdwn-item'>
-                                    Opleidingen
-                                </Link>
-                                <Link className='drpdwn-item'>
-                                    Bestuur
-                                </Link>
-                            </div>
-                        </div>
+                        <Link href={route('welcome')} className="nav-link dark">
+                            Thuis
+                        </Link>
                         <Link href={route('about-us')} className="nav-link dark">
                             Over Ons
                         </Link>
@@ -51,9 +39,11 @@ export default function GuestLayout({ auth = {}, children }) {
                             Foto album
                         </Link>
                         <Link className="nav-link dark">
-                            Aanvraag
+                            Lotus huren
                         </Link>
-
+                        <Link className="nav-link dark">
+                            Word Lotus
+                        </Link>
                         <Link className="nav-link dark">
                             Contact
                         </Link>
@@ -85,6 +75,7 @@ export default function GuestLayout({ auth = {}, children }) {
                         )}
                     </div>
                 </nav>
+                </div>
             </header>
             <CarouselComponent />
             <div>
@@ -98,6 +89,7 @@ export default function GuestLayout({ auth = {}, children }) {
                         <div className="footer-text">
                             <div className="footer-text-1">
                                 <h3>Vereniging</h3>
+                                <hr className="footer-divider" />
                                 <Link>
                                     Over Ons
                                 </Link>
@@ -110,6 +102,7 @@ export default function GuestLayout({ auth = {}, children }) {
                             </div>
                             <div className="footer-text-2">
                                 <h3>Hulp</h3>
+                                <hr className="footer-divider" />
                                 <Link>
                                     Veelgestelde vragen
                                 </Link>
@@ -125,6 +118,8 @@ export default function GuestLayout({ auth = {}, children }) {
                             </div>
                             <div className='footer-text-2'>
                                 <h3>Online</h3>
+                                <hr className="footer-divider" />
+
                                 <Link>
                                     Aanvraag
                                 </Link>
@@ -137,6 +132,7 @@ export default function GuestLayout({ auth = {}, children }) {
                             </div>
                             <div className='footer-text-2'>
                                 <h3>Volg Ons</h3>
+                                <hr className="footer-divider" /><br/>
                                 <div className='footer-textp-3'>
                                 <Link href='https://www.facebook.com/profile.php?id=61574034822426'>
                                     {facebookIcon}
