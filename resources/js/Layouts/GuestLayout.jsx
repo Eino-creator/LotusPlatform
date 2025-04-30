@@ -77,7 +77,6 @@ export default function GuestLayout({ auth = {}, children }) {
                 </nav>
                 </div>
             </header>
-            <CarouselComponent />
             <div>
                 {children}
             </div>
