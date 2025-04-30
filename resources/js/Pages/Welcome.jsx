@@ -10,17 +10,18 @@ export default function Welcome() {
                 <div>
                     <main>
                         <section className='welcome-content'>
-                            <div className='welcome-text'>
                                 <div className='welcome-text-content'>
-                                    <h1>Welkom bij LotusKring Zuid-Oost Drenthe</h1>
-                                    <p>
+                                    <h2 className='content-title'>Welkom bij LotusKring Zuid-Oost Drenthe</h2>
+                                    <p className='content-text'>
                                     Onze Lotus Kring is gevestigd in Emmen, we zijn een groep van enthousiaste vrijwilligers die
                                     zijn opgeleid en gediplomeerd om als realistische slachtoffers te spelen bij BHV trainingen, EHBO trainingen
                                     en bij Hulpdiensten zoals Brandweer, Politie en Ambulance.
                                     We spelen in noord Nederland Groningen, Friesland, Drenthe en Overijssel.
                                     </p>
+                                    <Link href={route('about-us')} className="content-button">
+                                        Meer over ons
+                                    </Link>
                                 </div>
-                            </div>
                             <div className='welcome-map'>
                                 <div className='welcome-map-content'>
                                     <img src="/img/nederland-l.png" alt="Map" />

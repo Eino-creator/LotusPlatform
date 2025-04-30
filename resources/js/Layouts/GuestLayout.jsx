@@ -39,7 +39,7 @@ export default function GuestLayout({ auth = {}, children }) {
                             Foto album
                         </Link>
                         <Link className="nav-link dark">
-                            Lotus huren
+                            Lotus aanvragen
                         </Link>
                         <Link className="nav-link dark">
                             Word Lotus

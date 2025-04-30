@@ -120,24 +120,28 @@ body {
     justify-content: space-around;
     width: 100%;
     background-color: white;
+    margin-top: 30px;
 }
 
-.welcome-text {
-    max-width: 40%;
-    background-color: cornsilk;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 20px;
+.content-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0018A8;
 }
 
+
+.content-button {
+    color: #E30613;
+    font-weight: bold;
+}
 .welcome-text-content {
     color: black;
+    width: 50%;
 }
 
 .welcome-map {
     display: flex;
     max-width: 40%;
-    background-color: cornsilk;
     padding: 20px;
     margin-top: 10px;
     border-radius: 20px;
