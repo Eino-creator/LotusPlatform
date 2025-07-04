@@ -32,4 +32,8 @@ Route::get('/over-ons', function () {
     return Inertia::render('Guest/AboutUs');
 })->name('about-us');
 
+Route::get('/foto-albums', function () {
+    return Inertia::render('Guest/Albums');
+})->name('photo-albums');
+
 require __DIR__.'/auth.php';

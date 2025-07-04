@@ -26,7 +26,7 @@ export default function Welcome() {
                                 </div>
                             <div className='welcome-map'>
                                 <div className='welcome-map-content'>
-                                    <img src="/img/nederland-l.png" alt="Map" />
+                                    <img src="/img/nederland-l.jpg" alt="Map" />
                                 </div>
                                 <div className='welcome-map-text'>
                                     <h1>
