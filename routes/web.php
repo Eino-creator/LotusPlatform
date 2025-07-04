@@ -36,4 +36,8 @@ Route::get('/foto-albums', function () {
     return Inertia::render('Guest/Albums');
 })->name('photo-albums');
 
+Route::get('/foto-album', function () {
+    return Inertia::render('Guest/Album');
+})->name('photo-album');
+
 require __DIR__.'/auth.php';
