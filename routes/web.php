@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -36,8 +37,10 @@ Route::get('/foto-albums', function () {
     return Inertia::render('Guest/Albums');
 })->name('photo-albums');
 
-Route::get('/foto-album', function () {
-    return Inertia::render('Guest/Album');
-})->name('photo-album');
+Route::resource('albums', AlbumController::class);
+
+//Route::get('/foto-album', function () {
+//    return Inertia::render('Guest/Album');
+//})->name('photo-album');
 
 require __DIR__.'/auth.php';

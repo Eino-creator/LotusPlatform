@@ -3,18 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAlbumRequest;
 use App\Http\Requests\UpdateAlbumRequest;
+use Inertia\Inertia;
 
 class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Album $album)
     {
-        //
+        $albums = Album::all();
+
+        return Inertia::render('Albums/Index', [
+            'albums' => $albums,
+        ]);
     }
 
     /**
@@ -38,7 +42,9 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
-        //
+        return Inertia::render('Albums/Show', [
+            'album' => $album,
+        ]);
     }
 
     /**
