@@ -39,6 +39,10 @@ Route::get('/foto-albums', function () {
 
 Route::resource('albums', AlbumController::class);
 
+Route::get('/aanvraag', function () {
+    return Inertia::render('Guest/Request');
+})->name('request');
+
 //Route::get('/foto-album', function () {
 //    return Inertia::render('Guest/Album');
 //})->name('photo-album');

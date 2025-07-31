@@ -42,8 +42,10 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
+        $albums = Album::with('photos')->get();
         return Inertia::render('Albums/Show', [
-            'album' => $album,
+            'albumId' => $album->id,
+            'albums' => $albums,
         ]);
     }
 

@@ -38,7 +38,7 @@ export default function GuestLayout({ auth = {}, children }) {
                         <Link href={route('albums.index')} className="nav-link dark">
                             Foto album
                         </Link>
-                        <Link className="nav-link dark">
+                        <Link href={route('request')} className="nav-link dark">
                             Lotus aanvragen
                         </Link>
                         <Link className="nav-link dark">
