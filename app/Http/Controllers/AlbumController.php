@@ -21,6 +21,15 @@ class AlbumController extends Controller
         ]);
     }
 
+    public function authIndex()
+    {
+        $albums = Album::all();
+
+        return Inertia::render('Auth/Albums/AlbumList', [
+            'albums' => $albums,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
