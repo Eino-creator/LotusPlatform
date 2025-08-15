@@ -1,4 +1,5 @@
 import InputError from '@/Components/InputError';
+import '/resources/css/Welcome.css';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
