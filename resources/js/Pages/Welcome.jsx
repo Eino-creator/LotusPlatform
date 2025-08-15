@@ -1,11 +1,13 @@
 import '/resources/css/Welcome.css';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link } from '@inertiajs/react';
+import CarouselComponent from '@/Components/CarouselComponent';
 
 export default function Welcome() {
     return (
         <GuestLayout>
             <Head title="LotusKring Zuid-Oost Drenthe" />
+            <CarouselComponent />
             <div className="welcome-container">
                 <div>
                     <main>
@@ -24,7 +26,7 @@ export default function Welcome() {
                                 </div>
                             <div className='welcome-map'>
                                 <div className='welcome-map-content'>
-                                    <img src="/img/nederland-l.png" alt="Map" />
+                                    <img src="/img/nederland-l.jpg" alt="Map" />
                                 </div>
                                 <div className='welcome-map-text'>
                                     <h1>
