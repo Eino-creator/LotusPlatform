@@ -79,3 +79,25 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+
+.add-album {
+    position: relative; /* Ensure child elements can be absolutely positioned */
+    background-color: #e0e0e0; /* Light grey background */
+    border: 2px dashed #b0b0b0; /* Dashed border for visual indication */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-album:hover {
+    background-color: #d0d0d0; /* Slightly darker grey on hover */
+}
+
+.add-album .plus-icon {
+    position: absolute; /* Center the plus icon */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Adjust for the icon's size */
+    font-size: 48px; /* Large plus symbol */
+    color: #808080; /* Grey color for the plus */
+}

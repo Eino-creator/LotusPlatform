@@ -24,6 +24,12 @@ export default function AlbumList({ albums }) {
             <Head title="Albums" />
 
             <div className="album-grid">
+                <div
+                    className="album-grid-item add-album"
+                    onClick={() => console.log('Add new album')}
+                >
+                    <span className="plus-icon">+</span>
+                </div>
                 {albums.map(album => (
                     <div key={album.id} className="album-grid-item">
                         <img src={album.cover_image} alt={album.title} />
