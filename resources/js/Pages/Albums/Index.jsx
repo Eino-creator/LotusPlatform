@@ -40,7 +40,7 @@ export default function Index({ albums }) {
                             className="album-card"
                         >
                             <div className="album-image-container">
-                                <img src={album.cover_image} alt={album.title} className="album-image" />
+                                <img src={`/storage/${album.cover_image}`} alt={album.title} className="album-image" />
                                 <div className="album-title-overlay">
                                     <span>{album.title}</span>
                                 </div>

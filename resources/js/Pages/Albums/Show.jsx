@@ -34,7 +34,7 @@ export default function Show({ albumId, albums }) {
                                 columnClassName="my-masonry-grid_column"
                             >
                             <div className="album-card">
-                                <img src={album.cover_image} alt={album.title} />
+                                <img src={`/storage/${album.cover_image}`} alt={album.title} />
                             </div>
 
                                 {Array.isArray(album.photos) && album.photos.length > 0 ? (

@@ -39,7 +39,7 @@ export default function AlbumList({ albums }) {
                 </div>
                 {albums.map(album => (
                     <div key={album.id} className="album-grid-item">
-                        <img src={album.cover_image} alt={album.title} />
+                        <img src={`/storage/${album.cover_image}`} alt={album.title} />
                         <div className="album-title-overlay">
                             {album.title}
                         </div>
