@@ -1,6 +1,7 @@
 import '/resources/css/LotusSystem.css';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
+import { router } from '@inertiajs/react';
 
 export default function AlbumList({ albums }) {
     const handleDelete = (albumId) => {
@@ -12,6 +13,12 @@ export default function AlbumList({ albums }) {
         console.log(`Edit album with ID: ${albumId}`);
         // Add your edit logic here
     };
+
+    const handleAdd = () => {
+        // console.log('Add new album');
+        // Redirect to album creation page
+        router.get(route('albums.create'));
+    }
 
     return (
         <AuthenticatedLayout
@@ -26,7 +33,7 @@ export default function AlbumList({ albums }) {
             <div className="album-grid">
                 <div
                     className="album-grid-item add-album"
-                    onClick={() => console.log('Add new album')}
+                    onClick={() => handleAdd()}
                 >
                     <span className="plus-icon">+</span>
                 </div>

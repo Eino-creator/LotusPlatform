@@ -11,7 +11,7 @@ class StoreAlbumRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreAlbumRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'main_image' => 'nullable|file|image|max:2048', // Ensure the file is an image and within size limits
+            'other_images.*' => 'nullable|file|image|max:2048', // Validate each file in the array
         ];
     }
 }

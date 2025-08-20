@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Album;
 use App\Http\Requests\StoreAlbumRequest;
 use App\Http\Requests\UpdateAlbumRequest;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class AlbumController extends Controller
@@ -35,7 +36,7 @@ class AlbumController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Auth/Albums/AlbumCreate');
     }
 
     /**
@@ -43,7 +44,27 @@ class AlbumController extends Controller
      */
     public function store(StoreAlbumRequest $request)
     {
-        //
+        // Validate the incoming request
+        $validated = $request->validated();
+
+        // Handle file upload for main_image
+        if ($request->hasFile('main_image')) {
+            // Store the file in the 'cover_images' directory on the 'public' disk
+            $validated['cover_image'] = $request->file('main_image')->store('cover_images', 'public');
+        } else {
+            // Optionally set a default image if no file is uploaded
+            $validated['cover_image'] = null; // Or 'default_image.jpg' if you have a placeholder
+        }
+
+        // Create the album
+        $album = Album::create([
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'cover_image' => $validated['cover_image'],
+        ]);
+
+        // Redirect to the albums list
+        return redirect()->route('albums.auth.index')->with('success', 'Album created successfully!');
     }
 
     /**

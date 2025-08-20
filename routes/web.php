@@ -24,6 +24,14 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('/album-create', [AlbumController::class, 'create'])->name('albums.create');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/album-store', [AlbumController::class, 'store'])->name('albums.store');
+});
+
+Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
