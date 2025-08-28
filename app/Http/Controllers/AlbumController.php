@@ -114,6 +114,20 @@ class AlbumController extends Controller
      */
     public function destroy(Album $album)
     {
-        //
+        // Delete associated photos from storage and database
+        foreach ($album->photos as $photo) {
+            Storage::disk('public')->delete($photo->photo_path);
+            DB::table('album__photos')->where('id', $photo->id)->delete();
+        }
+
+        // Delete cover image from storage
+        if ($album->cover_image) {
+            Storage::disk('public')->delete($album->cover_image);
+        }
+
+        // Delete the album
+        $album->delete();
+
+        return redirect()->route('albums.auth.index')->with('success', 'Album deleted successfully!');
     }
 }
