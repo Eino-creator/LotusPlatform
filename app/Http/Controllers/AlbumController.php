@@ -98,7 +98,10 @@ class AlbumController extends Controller
      */
     public function edit(Album $album)
     {
-        //
+        return Inertia::render('Auth/Albums/AlbumEdit', [
+            'album' => $album,
+            'photos' => $album->photos,
+        ]);
     }
 
     /**
@@ -106,7 +109,37 @@ class AlbumController extends Controller
      */
     public function update(UpdateAlbumRequest $request, Album $album)
     {
-        //
+        // Validate the request data
+        $validated = $request->validated();
+        // Update album details
+        $album->update([
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+        ]);
+        // Handle new cover image upload
+        if ($request->hasFile('main_image')) {
+            // Delete old cover image if exists
+            if ($album->cover_image) {
+                Storage::disk('public')->delete($album->cover_image);
+            }
+            $album->cover_image = $request->file('main_image')->store('cover_images', 'public');
+            $album->save();
+        }
+        // Handle new album photos upload
+        if ($request->hasFile('album_photos')) {
+            foreach ($request->file('album_photos') as $image) {
+                $path = $image->store('album_photos', 'public');
+                $filename = $image->getClientOriginalName();
+                // Create a record in album__photos table
+                DB::table('album__photos')->insert([
+                    'album_id' => $album->id,
+                    'photo_path' => $path,
+                    'filename' => $filename,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+        }
     }
 
     /**

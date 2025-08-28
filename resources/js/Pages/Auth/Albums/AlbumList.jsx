@@ -15,6 +15,7 @@ export default function AlbumList({ albums }) {
     const handleEdit = (albumId) => {
         console.log(`Edit album with ID: ${albumId}`);
         // Add your edit logic here
+        router.get(route('albums.edit', albumId));
     };
 
     const handleAdd = () => {

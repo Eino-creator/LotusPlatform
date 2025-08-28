@@ -187,3 +187,84 @@
     outline: none;
     box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.3);
 }
+
+.album-edit-form {
+    max-width: 500px;
+    margin: 32px auto;
+    padding: 24px 32px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.album-edit-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.album-edit-form input[type="text"],
+.album-edit-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    background: #f9fafb;
+    resize: vertical;
+}
+
+.album-edit-form textarea {
+    min-height: 80px;
+}
+
+.album-edit-form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.album-edit-form li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.album-edit-form button[type="button"] {
+    background: #e53e3e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin-left: 10px;
+    transition: background 0.2s;
+}
+
+.album-edit-form button[type="button"]:hover {
+    background: #c53030;
+}
+
+.album-edit-form button[type="submit"] {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s;
+}
+
+.album-edit-form button[type="submit"]:hover {
+    background: #1d4ed8;
+}
