@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Album;
 use App\Http\Requests\StoreAlbumRequest;
 use App\Http\Requests\UpdateAlbumRequest;
+use DB;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
@@ -44,26 +45,39 @@ class AlbumController extends Controller
      */
     public function store(StoreAlbumRequest $request)
     {
-        // Validate the incoming request
         $validated = $request->validated();
 
-        // Handle file upload for main_image
+        // Handle main_image upload
         if ($request->hasFile('main_image')) {
-            // Store the file in the 'cover_images' directory on the 'public' disk
             $validated['cover_image'] = $request->file('main_image')->store('cover_images', 'public');
         } else {
-            // Optionally set a default image if no file is uploaded
-            $validated['cover_image'] = null; // Or 'default_image.jpg' if you have a placeholder
+            $validated['cover_image'] = null;
         }
 
-        // Create the album
+        // Create the album first
         $album = Album::create([
             'title' => $validated['title'],
             'description' => $validated['description'],
             'cover_image' => $validated['cover_image'],
         ]);
 
-        // Redirect to the albums list
+        // Handle album_photos upload
+        if ($request->hasFile('album_photos')) {
+            foreach ($request->file('album_photos') as $image) {
+                $path = $image->store('album_photos', 'public');
+                $filename = $image->getClientOriginalName();
+
+                // Create a record in album__photos table
+                DB::table('album__photos')->insert([
+                    'album_id' => $album->id,
+                    'photo_path' => $path,
+                    'filename' => $filename,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+        }
+
         return redirect()->route('albums.auth.index')->with('success', 'Album created successfully!');
     }
 

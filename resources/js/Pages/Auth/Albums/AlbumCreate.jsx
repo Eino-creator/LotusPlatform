@@ -11,9 +11,27 @@ export default function AlbumCreate() {
         other_images: [],
     });
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     router.post(route('albums.store'), {'title': data.title, 'description': data.description, 'main_image': data.main_image});
+    // };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        router.post(route('albums.store'), {'title': data.title, 'description': data.description, 'main_image': data.main_image});
+        const formData = new FormData();
+        formData.append('title', data.title);
+        formData.append('description', data.description);
+        if (data.main_image) {
+            formData.append('main_image', data.main_image);
+        }
+        if (data.other_images && data.other_images.length > 0) {
+            data.other_images.forEach((file, idx) => {
+                formData.append('album_photos[]', file);
+            });
+        }
+        router.post(route('albums.store'), formData, {
+            forceFormData: true,
+        });
     };
 
     return (

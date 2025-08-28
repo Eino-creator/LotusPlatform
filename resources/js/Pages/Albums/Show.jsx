@@ -2,8 +2,11 @@ import '/resources/css/Welcome.css';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { Head } from '@inertiajs/react';
 import Masonry from 'react-masonry-css';
+import React, { useState } from 'react';
 
 export default function Show({ albumId, albums }) {
+
+    const [modalPhoto, setModalPhoto] = useState(null);
 
     // Masonry breakpoints
     const breakpointColumnsObj = {
@@ -33,18 +36,25 @@ export default function Show({ albumId, albums }) {
                                 className="my-masonry-grid"
                                 columnClassName="my-masonry-grid_column"
                             >
-                            <div className="album-card">
-                                <img src={`/storage/${album.cover_image}`} alt={album.title} />
-                            </div>
+                                <div className="album-card">
+                                    <img
+                                        src={`/storage/${album.cover_image}`}
+                                        alt={album.title}
+                                        onClick={() => setModalPhoto({ src: `/storage/${album.cover_image}`, alt: album.title })}
+                                        style={{ cursor: 'pointer' }}
+                                    />
+                                </div>
 
                                 {Array.isArray(album.photos) && album.photos.length > 0 ? (
                                     album.photos.map(photo => (
                                     <div className="album-card">
                                         <div key={photo.id}>
                                             <img
-                                                src={photo.photo_path}
+                                                src={`/storage/${photo.photo_path}`}
                                                 alt={photo.filename || 'Photo'}
                                                 className="album-photo"
+                                                onClick={() => setModalPhoto({ src: `/storage/${photo.photo_path}`, alt: photo.filename || 'Photo' })}
+                                                style={{ cursor: 'pointer' }}
                                             />
                                         </div>
                                     </div>
@@ -55,6 +65,37 @@ export default function Show({ albumId, albums }) {
 
 
                             </Masonry>
+                            {/* Modal */}
+                            {modalPhoto && (
+                                <div
+                                    className="modal-backdrop"
+                                    onClick={() => setModalPhoto(null)}
+                                    style={{
+                                        position: 'fixed',
+                                        top: 0,
+                                        left: 0,
+                                        width: '100vw',
+                                        height: '100vh',
+                                        background: 'rgba(0,0,0,0.8)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        zIndex: 1000,
+                                    }}
+                                >
+                                    <img
+                                        src={modalPhoto.src}
+                                        alt={modalPhoto.alt}
+                                        style={{
+                                            maxWidth: '90vw',
+                                            maxHeight: '90vh',
+                                            boxShadow: '0 0 20px #000',
+                                            borderRadius: '8px',
+                                        }}
+                                        onClick={e => e.stopPropagation()}
+                                    />
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
