@@ -7,6 +7,9 @@ export default function AlbumList({ albums }) {
     const handleDelete = (albumId) => {
         console.log(`Delete album with ID: ${albumId}`);
         // Add your delete logic here
+        if (confirm('Are you sure you want to delete this album?')) {
+            router.delete(route('albums.destroy', albumId));
+        }
     };
 
     const handleEdit = (albumId) => {
