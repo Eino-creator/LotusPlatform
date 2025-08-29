@@ -11,7 +11,7 @@ class UpdateAlbumRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class UpdateAlbumRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['required', 'string', 'max:255'],
+            'description' => ['nullable', 'string'],
+            'cover_image' => ['nullable', 'image', 'max:2048'],
+            'album_photos' => ['nullable', 'array'],
+            'album_photos.*' => ['image', 'max:2048'],
+            'removed_photo_ids' => ['nullable', 'array'],
+            'removed_photo_ids.*' => ['integer', 'exists:album__photos,id'],
         ];
     }
 }
