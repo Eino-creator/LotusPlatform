@@ -29,29 +29,36 @@ export default function AlbumEdit({ album, photos, onSubmit }) {
         setNewPhotos(updated);
     };
 
-    const handleSubmit = e => {
-        e.preventDefault();
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
         const formData = new FormData();
         formData.append('title', title);
         formData.append('description', description);
-        if (coverImage) formData.append('cover_image', coverImage);
-        removedPhotoIds.forEach(id => formData.append('remove_photo_ids[]', id));
-        newPhotos.forEach(file => formData.append('album_photos[]', file));
-        onSubmit(formData); // Pass the FormData to the parent
-    };
 
-    const handleAlbumUpdate = async (formData) => {
-        await fetch(`/albums/${album.id}/update`, {
-            method: 'POST',
-            body: formData,
-        });
-        // Handle response as needed
+        if (coverImage) {
+            formData.append('cover_image', coverImage);
+        }
+
+        // Only append new photos
+        if (newPhotos.length > 0) {
+            newPhotos.forEach((photo) => {
+                formData.append('album_photos[]', photo);
+            });
+        }
+
+        // Append removed photo IDs
+        if (removedPhotoIds.length > 0) {
+            removedPhotoIds.forEach((id) => {
+                formData.append('removed_photo_ids[]', id);
+            });
+        }
+
+        await onSubmit(formData);
     };
 
 
     return (
-        // <AlbumEdit album={album} photos={photos} onSubmit={handleAlbumUpdate}>
-
     <form onSubmit={handleSubmit} className="album-edit-form">
             <div>
                 <label>Title</label>
@@ -96,6 +103,5 @@ export default function AlbumEdit({ album, photos, onSubmit }) {
             </div>
             <button type="submit" style={{ marginTop: 20 }}>Save Changes</button>
         </form>
-        // </AlbumEdit>
     );
 }
