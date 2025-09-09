@@ -40,9 +40,6 @@ jobs:
 
       - name: Generate app key
         run: php artisan key:generate
-        
-      - name: Run migrations
-        run: php artisan migrate --no-interaction --force
-        
+
       - name: Execute tests
         run: vendor/bin/phpunit
