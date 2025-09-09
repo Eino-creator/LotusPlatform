@@ -30,5 +30,6 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
         <env name="INERTIA_TESTING" value="true"/>
+        <env name="VITE_MANIFEST_PATH" value="not-used"/>
     </php>
 </phpunit>
