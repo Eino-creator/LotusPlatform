@@ -7,7 +7,7 @@ export default function Request() {
         <GuestLayout>
             <Head title="Lotus Aanvragen"/>
             <div className="request-form-container">
-                <div>
+                <div className="request-form-section">
                     <h1>Lotus Aanvragen</h1>
                     <form className="request-form">
                         {/* 7 Text Inputs in a Column */}
@@ -47,20 +47,18 @@ export default function Request() {
                         <button type="submit">Verstuur bericht</button>
                     </form>
                 </div>
-                <div>
+                <div className="organization-info-sidebar">
                     <h2>Verenigings informatie:</h2>
-                    <p>LOTUSkring Zuid-Oost Drenthe</p>
+                    <p>LOTUSKring Zuid-Oost Drenthe</p>
                     <p>KvK: 40048477</p>
-                    <h2>Voorzitter:</h2>
-                    <p>Naam voorzitter</p>
-                    <h2>Secretaris:</h2>
-                    <p>Jan-Elze Hummel</p>
-                    <h2>Penningmeester:</h2>
-                    <p>Esther</p>
-                    <h2>Cöordinator:</h2>
-                    <p>Alie Aardema</p>
-                    <h2>Privacy:</h2>
-                    <p>Privacy Verklaring</p>
+                    <p>Voorzitter:<br/>A. Holteman</p>
+                    <p>Secretaris:<br/>J.E. Hummel</p>
+                    <p>Penningmeester:<br/>E. Prevost</p>
+                    <p>Coördinator:<br/>A: Aardema</p>
+                    <p>Privacy:<br/>Privacy verklaring</p>
+                    <div className="org-map">
+                        {/*<img src="your-map-image.png" alt="Map" style="width:100%;"/>*/}
+                    </div>
                 </div>
             </div>
         </GuestLayout>
