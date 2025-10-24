@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RequestController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -63,6 +64,8 @@ Route::resource('albums', AlbumController::class);
 Route::get('/aanvraag', function () {
     return Inertia::render('Guest/Request');
 })->name('request');
+
+Route::get('/request', [RequestController::class, 'store'])->name('request.store');
 
 //Route::get('/foto-album', function () {
 //    return Inertia::render('Guest/Album');
