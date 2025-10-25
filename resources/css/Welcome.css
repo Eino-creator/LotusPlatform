@@ -411,8 +411,7 @@ body {
 
 .organization-info-sidebar p {
     margin: 0 0 8px 0;
-    color: #222;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .organization-info-sidebar .org-map {
@@ -435,7 +434,6 @@ body {
     flex-direction: column;
     align-items: center;
     max-width: 800px;
-    padding: 20px;
 }
 .request-form-section-center {
     display: flex;
@@ -455,4 +453,18 @@ body {
     flex-direction: row;
     gap: 10px;
     margin-bottom: 10px;
+}
+
+.organization-info-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0018A8;
+    margin-bottom: 10px;
+}
+
+.organization-info-subject {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0018A8;
+    margin-bottom: 5px;
 }

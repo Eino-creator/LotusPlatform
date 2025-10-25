@@ -83,14 +83,20 @@ export default function Request() {
                 </div>
                 </div>
                 <div className="organization-info-sidebar">
-                    <h2>Verenigings informatie:</h2>
-                    <p>LOTUSKring Zuid-Oost Drenthe</p>
-                    <p>KvK: 40048477</p>
-                    <p>Voorzitter:<br/>A. Holteman</p>
-                    <p>Secretaris:<br/>J.E. Hummel</p>
-                    <p>Penningmeester:<br/>E. Prevost</p>
-                    <p>Coördinator:<br/>A: Aardema</p>
-                    {/*<p>Privacy:<br/>Privacy verklaring</p>*/}
+                    <h2 className="organization-info-title">Verenigings informatie:</h2>
+                    <h2 className="organization-info-title">LOTUSKring Zuid-Oost Drenthe</h2>
+                    <p className="organization-info-subject">KvK:</p>
+                    <p> 40048477</p>
+                    <p className="organization-info-subject">Voorzitter:</p>
+                    <p>A. Holteman</p>
+                    <p className="organization-info-subject">Secretaris:</p>
+                    <p>J.E. Hummel</p>
+                    <p className="organization-info-subject">Penningmeester:</p>
+                    <p>E. Prevost</p>
+                    <p className="organization-info-subject">Coördinator:</p>
+                    <p>A. Aardema</p>
+                    {/*<p>Privacy:</p>
+                    <p>Privacy verklaring</p>*/}
                     <div className="org-map">
                         {/*<img src="your-map-image.png" alt="Map" style="width:100%;"/>*/}
                     </div>
