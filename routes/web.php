@@ -65,6 +65,10 @@ Route::get('/aanvraag', function () {
     return Inertia::render('Guest/Request');
 })->name('request');
 
+Route::get('/word-Lotus', function () {
+    return Inertia::render('Guest/BeLotus');
+})->name('be-lotus');
+
 Route::get('/request', [RequestController::class, 'store'])->name('request.store');
 
 //Route::get('/foto-album', function () {
