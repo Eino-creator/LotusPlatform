@@ -41,7 +41,7 @@ export default function GuestLayout({ auth = {}, children }) {
                         <Link href={route('request')} className="nav-link dark">
                             Lotus aanvragen
                         </Link>
-                        <Link className="nav-link dark">
+                        <Link href={route('be-lotus')} className="nav-link dark">
                             Word Lotus
                         </Link>
                         <Link className="nav-link dark">
