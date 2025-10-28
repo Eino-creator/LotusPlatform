@@ -69,7 +69,12 @@ Route::get('/word-Lotus', function () {
     return Inertia::render('Guest/BeLotus');
 })->name('be-lotus');
 
+Route::get('/contact', function () {
+    return Inertia::render('Guest/Contact');
+})->name('contact');
+
 Route::get('/request', [RequestController::class, 'store'])->name('request.store');
+Route::get('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
 
 //Route::get('/foto-album', function () {
 //    return Inertia::render('Guest/Album');
