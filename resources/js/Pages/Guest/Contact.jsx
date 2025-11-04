@@ -4,6 +4,7 @@ import {Head} from '@inertiajs/react';
 import PrimaryButton from "@/Components/PrimaryButton.jsx";
 import {useState} from "react";
 import {router} from "@inertiajs/react";
+import { useEffect } from "react";
 
 export default function Request() {
     const [form, setForm] = useState({
@@ -22,6 +23,19 @@ export default function Request() {
         router.get('contact-submit', form);
     };
 
+    useEffect(() => {
+        const emailSpan = document.getElementById("contact-email");
+        if (emailSpan) {
+            const email = String.fromCharCode(
+                    97, 46, 97, 97, 114, 100, 101, 109, 97
+                ) + "@" +
+                String.fromCharCode(
+                    104, 111, 109, 101, 46, 110, 108
+                );
+            emailSpan.innerHTML = `<a href="mailto:${email}">${email}</a>`;
+        }
+    }, []);
+
 
     return (
         <GuestLayout>
@@ -29,21 +43,23 @@ export default function Request() {
             <div className="request-form-container">
                 <div className={"request-form-section-center"}>
                     <div className="request-form-section">
-                        <h1>Lotus Aanvragen</h1>
-                        <form className="request-form">
-                            {/* 7 Text Inputs in a Column */}
-                            <div className="form-column">
-                                <input type="text" placeholder="Uw email" value={form.naamContact} onChange={handleChange} name="naamContact"/>
-                                <input type="text" placeholder="Uw naam" value={form.emailContact} onChange={handleChange} name="emailContact"/>
-                                <input type="text" placeholder="Onderwerp" value={form.telefoonContact} onChange={handleChange} name="telefoonContact"/>
-                            </div>
+                        <h1>Contact</h1>
+                        <p>Momenteel wordt er aan deze pagina gewerkt wegens veiligheids redenen. U kunt een mail sturen naar:</p>
+                        <span id="contact-email"></span>
+                        {/*<form className="request-form">*/}
+                        {/*    /!* 7 Text Inputs in a Column *!/*/}
+                        {/*    <div className="form-column">*/}
+                        {/*        <input type="text" placeholder="Uw email" value={form.naamContact} onChange={handleChange} name="naamContact"/>*/}
+                        {/*        <input type="text" placeholder="Uw naam" value={form.emailContact} onChange={handleChange} name="emailContact"/>*/}
+                        {/*        <input type="text" placeholder="Onderwerp" value={form.telefoonContact} onChange={handleChange} name="telefoonContact"/>*/}
+                        {/*    </div>*/}
 
-                            <div className="form-column">
-                                <textarea placeholder="Verdere Opmerkingen" value={form.opmerkingen} onChange={handleChange} name="opmerkingen"></textarea>
-                            </div>
+                        {/*    <div className="form-column">*/}
+                        {/*        <textarea placeholder="Vraag" value={form.opmerkingen} onChange={handleChange} name="opmerkingen"></textarea>*/}
+                        {/*    </div>*/}
 
-                            <PrimaryButton type="submit" onClick={handleSubmit}>Verstuur bericht</PrimaryButton>
-                        </form>
+                        {/*    <PrimaryButton type="submit" onClick={handleSubmit}>Verstuur bericht</PrimaryButton>*/}
+                        {/*</form>*/}
                     </div>
                 </div>
                 <div className="organization-info-sidebar">

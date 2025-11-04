@@ -38,7 +38,7 @@ use Illuminate\Queue\SerializesModels;
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.request', with: ['data' => $this->data]
+            markdown: 'emails.contact', with: ['data' => $this->data]
         );
     }
 

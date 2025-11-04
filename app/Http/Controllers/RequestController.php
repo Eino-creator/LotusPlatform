@@ -32,7 +32,7 @@ class RequestController extends Controller
      */
     public function store(StoreRequestRequest $request)
     {
-        Mail::to('einohummel@gmail.com')->send(new RequestMail($request->all()));
+//        Mail::to('einohummel@gmail.com')->send(new RequestMail($request->all()));
 //        dd($request->all());
         return redirect()->back()->with('success', 'Uw aanvraag is succesvol verzonden!');
     }

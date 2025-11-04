@@ -31,7 +31,7 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request)
     {
-        Mail::to('einohummel@gmail.com')->send(new ContactMail($request->all()));
+//        Mail::to('einohummel@gmail.com')->send(new ContactMail($request->all()));
 //        dd($request->all());
         return redirect()->back()->with('success', 'Uw mail is succesvol verzonden!');
     }

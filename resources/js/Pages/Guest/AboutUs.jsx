@@ -43,14 +43,38 @@ export default function AboutUs() {
         Wil je je lessen eerste hulp naar een hoger niveau tillen door gebruik te maken van één van onze LOTUS-slachtoffers, of wil je het LOTUS-diploma halen of uitbreiden?
       </p>
 
-      <p>
-        <strong>Neem contact met ons op!</strong><br />
-        <strong>Mailadres:</strong> info@lotuskring.nl<br />
-        <strong>Website:</strong> www.lotuskring.nl<br />
-        <strong>Facebook:</strong> facebook.com/lotuskringzod<br />
-        <strong>Telefoonnummer:</strong> 06-12345678
-      </p>
+      {/*<p>*/}
+      {/*  <strong>Neem contact met ons op!</strong><br />*/}
+      {/*  <strong>Mailadres:</strong> <br />*/}
+      {/*  <strong>Website:</strong> https://www.lotuskring-zuidoost-drenthe.eu/<br />*/}
+      {/*  <strong>Facebook:</strong> facebook.com/lotuskringzod<br />*/}
+      {/*  <strong>Telefoonnummer:</strong> 06-12345678*/}
+      {/*</p>*/}
     </div>
+                                <div className="about-us-board-section">
+                                    <h2>Bestuur</h2>
+                                    <h3>Samenstelling Bestuur + ereleden</h3>
+                                    <ul>
+                                        <li><strong>Voorzitter</strong>: Dhr. A. Holterman</li>
+                                        <li><strong>Secretaris</strong>: Dhr. J.E. Hummel<br />
+                                            <strong>e-mail</strong>: secretaris@lotuskring-zuidoost-drenthe.eu
+                                        </li>
+                                        <li><strong>Penningmeester</strong>: Mevr. E.E. Prevost-Endert<br />
+                                            <strong>e-mail</strong>: penningmeester@lotuskring-zuidoost-drenthe.eu
+                                        </li>
+                                        <li><strong>Bestuurslid</strong>: Dhr. H.Heller</li>
+                                        <li><strong>Bestuurslid</strong>: Mevr. B.P. Jasper-Haverkamp</li>
+                                        <li><strong>Bestuurslid</strong>: Mevr. J.G.M. Hof</li>
+                                        <li><strong>Bestuurslid</strong>: Mevr. A Hummel - Molema</li>
+                                        <li><strong>Studieleider</strong>: Mevr. M.Huberts-Kregel</li>
+                                        <li><strong>Med.Begeleider</strong>: Dhr. H. Kleve</li>
+                                    </ul>
+                                    <h3>ERELEDEN</h3>
+                                    <ul>
+                                        <li>Mevr. A. Aardema - Anninga</li>
+                                        <li>Mevr. A. Wieringa</li>
+                                    </ul>
+                                </div>
                             </div>
                         </section>
                     </main>
