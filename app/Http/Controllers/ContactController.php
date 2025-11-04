@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\RequestMail;
-use App\Models\Request;
+use App\Models\Contact;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreRequestRequest;
-use App\Http\Requests\UpdateRequestRequest;
-use Mail;
+use App\Http\Requests\StoreContactRequest;
+use App\Http\Requests\UpdateContactRequest;
+use App\Mail\ContactMail;
 
-class RequestController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -30,17 +29,17 @@ class RequestController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRequestRequest $request)
+    public function store(StoreContactRequest $request)
     {
-//        Mail::to('einohummel@gmail.com')->send(new RequestMail($request->all()));
+//        Mail::to('einohummel@gmail.com')->send(new ContactMail($request->all()));
 //        dd($request->all());
-        return redirect()->back()->with('success', 'Uw aanvraag is succesvol verzonden!');
+        return redirect()->back()->with('success', 'Uw mail is succesvol verzonden!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Request $request)
+    public function show(Contact $contact)
     {
         //
     }
@@ -48,7 +47,7 @@ class RequestController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -56,15 +55,15 @@ class RequestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-//    public function update(UpdateRequestRequest $request, Request $request)
-//    {
-//        //
-//    }
+    public function update(UpdateContactRequest $request, Contact $contact)
+    {
+        //
+    }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request)
+    public function destroy(Contact $contact)
     {
         //
     }

@@ -44,7 +44,7 @@ export default function GuestLayout({ auth = {}, children }) {
                         <Link href={route('be-lotus')} className="nav-link dark">
                             Word Lotus
                         </Link>
-                        <Link className="nav-link dark">
+                        <Link href={route('contact')} className="nav-link dark">
                             Contact
                         </Link>
                     </div>
@@ -89,29 +89,29 @@ export default function GuestLayout({ auth = {}, children }) {
                             <div className="footer-text-1">
                                 <h3>Vereniging</h3>
                                 <hr className="footer-divider" />
-                                <Link>
+                                <Link  href={route('about-us')}>
                                     Over Ons
                                 </Link>
-                                <Link>
-                                    Onze diensten
-                                </Link>
-                                <Link>
-                                    Geschiedenis
-                                </Link>
+                                {/*<Link>*/}
+                                {/*    Onze diensten*/}
+                                {/*</Link>*/}
+                                {/*<Link>*/}
+                                {/*    Geschiedenis*/}
+                                {/*</Link>*/}
                             </div>
                             <div className="footer-text-2">
                                 <h3>Hulp</h3>
                                 <hr className="footer-divider" />
-                                <Link>
-                                    Veelgestelde vragen
-                                </Link>
+                                {/*<Link>*/}
+                                {/*    Veelgestelde vragen*/}
+                                {/*</Link>*/}
                                 {/* <Link>
                                     Privacybeleid
                                 </Link> */}
                                 {/* <Link>
                                     Algemene voorwaarden
                                 </Link> */}
-                                <Link>
+                                <Link  href={route('contact')}>
                                     Contact
                                 </Link>
                             </div>
@@ -119,13 +119,13 @@ export default function GuestLayout({ auth = {}, children }) {
                                 <h3>Online</h3>
                                 <hr className="footer-divider" />
 
-                                <Link>
+                                <Link  href={route('request')}>
                                     Aanvraag
                                 </Link>
-                                <Link>
-                                    Omgeving
-                                </Link>
-                                <Link>
+                                {/*<Link>*/}
+                                {/*    Omgeving*/}
+                                {/*</Link>*/}
+                                <Link  href={route('albums.index')}>
                                     Foto album
                                 </Link>
                             </div>

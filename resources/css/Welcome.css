@@ -446,6 +446,7 @@ body {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 10px;
+    width: 800px;
 }
 
 .form-row {
@@ -467,4 +468,40 @@ body {
     font-weight: bold;
     color: #0018A8;
     margin-bottom: 5px;
+}
+
+
+.about-us-board-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.about-us-board-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.about-us-board-section h3 {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.about-us-board-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-us-board-section li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #444;
+}
+
+.about-us-board-section li strong {
+    color: #000;
 }

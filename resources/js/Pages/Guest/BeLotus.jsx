@@ -1,35 +1,30 @@
 import '/resources/css/Welcome.css';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import {Head} from '@inertiajs/react';
+import { useEffect } from "react";
 
 export default function BeLotus() {
+
+    useEffect(() => {
+        const emailSpan = document.getElementById("be-lotus-email");
+        if (emailSpan) {
+            const email = String.fromCharCode(
+                    115, 101, 99, 114, 101, 116, 97, 114, 105, 115
+                ) + "@" +
+                String.fromCharCode(
+                    108, 111, 116, 117, 115, 107, 114, 105, 110, 103, 45, 122, 117, 105, 100, 111, 111, 115, 116, 45, 100, 114, 101, 110, 116, 104, 101, 46, 101, 117
+                );
+            emailSpan.innerHTML = `<a href="mailto:${email}">${email}</a>`;
+        }
+    }, []);
+
     return (
         <GuestLayout>
             <Head title="Lotus Aanvragen"/>
             <div className="request-form-container">
                 <div>
                     <h1>Beste eesrtehulpverlener</h1>
-                    <p>Ben je creatief en wil je je kennis verbreden en verdiepen?</p>
-                    <p>Bij voldoende aanmeldingen start in Emmen in november 2025 een versnelde opleiding tot LOTUS-slachtoffer.</p>
-                    <p>In maximaal 14 zaterdagenvan 9:30 uur tot 16:00 uur wordt de leerstof aangeboden,</p>
-                    <p>gevolgd door een examen centraal in Nederland.</p>
-                    <p>Nieuwsgierig geworden of de opleiding iets voor je is? Kijk dan eens op de website van de organizatie LOTUS:</p>
-                    <a href="https://organisatielotus.nl/opleiding-lotusslachtoffer/" target="_blank" rel="noopener noreferrer">https://organisatielotus.nl/opleiding-lotusslachtoffer/</a>
-                    <p>De opleiding kost €900,- en is inclusief koffie/thee, een koffer, lesboek, een basis grime-pakket en 1x examen.</p>
-                    <p>Exclusief lunch en aanvullingen voor grimeren met persoonlijke voorkeur.</p>
-                    <p>We organiseren een online informatiebijeenkomst op woensdag 3 september om 19:30 uur,</p>
-                    <p>de uitnodiging hiervoor volgt per mail na aanmelden via de Secretaris</p>
-                    <p>secretaris@lotuskring-zuidoost-drenthe.eu</p>
-
-                    <p>Instructeur-LOTUS bij LOTUS-kring Zuid-Oost Drenthe 03</p>
-                    <h2>Lesdata:</h2>
-                    <p>November: 1, 15, 29</p>
-                    <p>Januari: 10, 24</p>
-                    <p>Februari: 7, 14</p>
-                    <p>Maart: 7, 21</p>
-                    <p>April: 4, 18</p>
-                    <p>Mei: 9, 23, 30</p>
-                    <p>Verwacht examen op een zaterdag in juni 2026, datum hiervan is nog niet bekend.</p>
+                    <p>Informeer voor een volgende LOTUS© slachtoffer opleiding bij de organizatie LOTUS©</p>
                 </div>
                 <div className="organization-info-sidebar">
                     <h2 className="organization-info-title">Verenigings informatie:</h2>
