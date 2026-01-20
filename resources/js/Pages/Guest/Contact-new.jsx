@@ -52,22 +52,22 @@ export default function Request() {
                 <div className={"request-form-section-center"}>
                     <div className="request-form-section">
                         <h1>Contact</h1>
-                        <p>Momenteel wordt er aan deze pagina gewerkt wegens veiligheids redenen. U kunt een mail sturen naar:</p>
-                        <span id="contact-email"></span>
-                        {/*<form className="request-form">*/}
-                        {/*    /!* 7 Text Inputs in a Column *!/*/}
-                        {/*    <div className="form-column">*/}
-                        {/*        <input type="text" placeholder="Uw email" value={form.naamContact} onChange={handleChange} name="nameContact"/>*/}
-                        {/*        <input type="text" placeholder="Uw naam" value={form.emailContact} onChange={handleChange} name="emailContact"/>*/}
-                        {/*        <input type="text" placeholder="Onderwerp" value={form.telefoonContact} onChange={handleChange} name="subjectContact"/>*/}
-                        {/*    </div>*/}
+                        {/*<p>Momenteel wordt er aan deze pagina gewerkt wegens veiligheids redenen. U kunt een mail sturen naar:</p>*/}
+                        {/*<span id="contact-email"></span>*/}
+                        <form className="request-form">
+                            {/* 7 Text Inputs in a Column */}
+                            <div className="form-column">
+                                <input type="text" placeholder="Uw email" value={form.naamContact} onChange={handleChange} name="nameContact"/>
+                                <input type="text" placeholder="Uw naam" value={form.emailContact} onChange={handleChange} name="emailContact"/>
+                                <input type="text" placeholder="Onderwerp" value={form.telefoonContact} onChange={handleChange} name="subjectContact"/>
+                            </div>
 
-                        {/*    <div className="form-column">*/}
-                        {/*        <textarea placeholder="Vraag" value={form.opmerkingen} onChange={handleChange} name="messageContact"></textarea>*/}
-                        {/*    </div>*/}
+                            <div className="form-column">
+                                <textarea placeholder="Vraag" value={form.opmerkingen} onChange={handleChange} name="messageContact"></textarea>
+                            </div>
 
-                        {/*    <PrimaryButton type="submit" onClick={handleSubmit}>Verstuur bericht</PrimaryButton>*/}
-                        {/*</form>*/}
+                            <PrimaryButton type="submit" onClick={handleSubmit}>Verstuur bericht</PrimaryButton>
+                        </form>
                     </div>
                 </div>
                 <div className="organization-info-sidebar">

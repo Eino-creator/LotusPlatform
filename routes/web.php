@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RequestController;
 use Illuminate\Foundation\Application;
@@ -73,8 +74,16 @@ Route::get('/contact', function () {
     return Inertia::render('Guest/Contact');
 })->name('contact');
 
+Route::get('/contact-new', function () {
+    return Inertia::render('Guest/Contact-new');
+})->name('contact-new');
+
+Route::get('/request-new', function () {
+    return Inertia::render('Guest/Request-new');
+})->name('request-new');
+
 Route::get('/request', [RequestController::class, 'store'])->name('request.store');
-Route::get('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
 
 //Route::get('/foto-album', function () {
 //    return Inertia::render('Guest/Album');

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
 use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -31,9 +32,20 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request)
     {
-//        Mail::to('einohummel@gmail.com')->send(new ContactMail($request->all()));
-//        dd($request->all());
-        return redirect()->back()->with('success', 'Uw mail is succesvol verzonden!');
+//        $request->validate([
+//            'nameContact' => 'required|string|max:255',
+//            'emailContact' => 'required|email|max:255',
+//            'subjectContact' => 'required|string|max:255',
+//            'messageContact' => 'required|string',
+//        ]);
+
+//        Mail::raw($request->messageContact, function ($message) use ($request) {
+//            $message->to('[your email address here]')
+//                    ->subject($request->subjectContact)
+//                    ->from($request->emailContact, $request->nameContact);
+//        });
+
+//        return back()->with('success', 'Uw mail is succesvol verzonden!');
     }
 
     /**

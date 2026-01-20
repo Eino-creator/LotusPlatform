@@ -505,3 +505,9 @@ body {
 .about-us-board-section li strong {
     color: #000;
 }
+
+.request-terms-note {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 20px;
+}
