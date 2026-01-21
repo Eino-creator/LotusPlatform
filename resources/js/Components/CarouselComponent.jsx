@@ -7,7 +7,7 @@ export default function CarouselComponent() {
         <section className="image-carousel">
             <Carousel showThumbs={false} autoPlay infiniteLoop interval={5000}>
                 <div>
-                    <img src="/img/Melle-foto.jpg" alt="LotusKring Zuid-Oost Drenthe" />
+                    <img src="/img/banner_homepage.jpg" alt="LotusKring Zuid-Oost Drenthe" />
                 </div>
                 <div>
                     <img src="/img/staande.jpg" alt="Another Image" />
